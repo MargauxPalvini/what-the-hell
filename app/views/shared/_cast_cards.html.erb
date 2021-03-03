@@ -1,6 +1,9 @@
-<div>
+<div class="cards">
   <% @results.each do |result| %>
-    <p>Here we have to design a card with actor pitcure and name</p>
-    <%= result %>
+    <div class="card-category" style="width: 18rem;">
+      <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/5/54/Julia_Roberts_%2843838880775%29.jpg" alt="Actor's picture">
+      <div class="card-title">Julia Roberts</div>
+    </div>
+  <%= result %>
   <% end %>
 </div>
