@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
     @search = Search.new(query: params[:query]) || Search.new
     @query = []
     @query << params[:query]
-    @results = ["actor1", "actor2"]
+    @results = ["actor1", "actor2", "actor3", "actor4"]
   end
 
   def create
