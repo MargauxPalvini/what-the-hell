@@ -1,6 +1,9 @@
 <% placeholder = "Type another movie..." %>
 
-<%= text_field_tag 'movie-input', nil, placeholder: placeholder, autocomplete: 'off' %>
+<%= form_with url: @form_action, method: :post, class: "movie-search" do |form| %>
+     <%= form.text_field 'movie-name', placeholder: placeholder, autocomplete: 'off' %>
+     <input type="hidden" name="movie-id" id="movie-id">
+<% end %>
 
 <div id="movie-suggestions"
      data-tmdb-api-key="<%= ENV['TMDB_KEY'] %>">

@@ -1,12 +1,15 @@
+const movieName = document.getElementById("movie-name");
+const movieId = document.getElementById("movie-id");
+
+const form = document.querySelector(".movie-search");
+const movieSuggestions = document.getElementById("movie-suggestions");
+
 const submitMovie = (event) => {
-  const form = document.getElementById("new_search");
-  const formInput = document.getElementById("search_query");
-  const movieInput = document.getElementById("movie-input");
   // enter chosen movie in the search field
-  movieInput.value = event.currentTarget.attributes["movie-title"].value;
+  movieName.value = event.currentTarget.attributes["movie-title"].value;
   // set the value of the form field to the movie id
-  formInput.value = event.currentTarget.attributes["movie-id"].value;
-  form.submit();
+  movieId.value = event.currentTarget.attributes["movie-id"].value;
+  // form.submit();
 };
 
 const fetchMovies = (query) => {
@@ -30,7 +33,6 @@ const movieImage = (movie) => {
 };
 
 const insertMovies = (data) => {
-  const movieSuggestions = document.getElementById("movie-suggestions");
   movieSuggestions.innerHTML = "";
   const firstFour = data.results.slice(0, 4);
   firstFour.forEach((movie) => {
@@ -65,23 +67,22 @@ const toggleElements = (input, suggestions, element) => {
 };
 
 const initAutocomplete = () => {
-  const movieInput = document.getElementById("movie-input");
   const movieSuggestions = document.getElementById("movie-suggestions");
   const mainTitle = document.getElementsByClassName("main-title")[0];
   const movieCards = document.getElementById("movie-card-section");
   // added check for the presence of the element to suppress errors on views without the movie input
-  if (movieInput) {
+  if (movieName) {
     if (mainTitle) {
       // add eventlistener to hide main title on input focus if it is present and restore it if needed
-      toggleElements(movieInput, movieSuggestions, mainTitle);
+      toggleElements(movieName, movieSuggestions, mainTitle);
     } else if (movieCards) {
       // hide and restore movie cards as needed
-      toggleElements(movieInput, movieSuggestions, movieCards);
+      toggleElements(movieName, movieSuggestions, movieCards);
     }
-    movieInput.addEventListener("keyup", (event) => {
+    movieName.addEventListener("keyup", (event) => {
       movieSuggestions.innerHTML = "";
-      if (movieInput.value.length > 2) {
-        fetchMovies(movieInput.value);
+      if (movieName.value.length > 2) {
+        fetchMovies(movieName.value);
       }
     });
   }
