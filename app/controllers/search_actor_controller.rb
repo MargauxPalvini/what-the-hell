@@ -18,7 +18,19 @@ class SearchActorController < ApplicationController
   end
 
   def step3
-    "step3"
+    @actors1 = Tmdb.search_cast(params[:id1])
+    @actors2 = Tmdb.search_cast(params[:id2])
+    @common_actors_id = find_common_actors_id(@actors1, @actors2)
+    
+    # only needed if there is no direct match
+    if(@common_actors_id.count != 1)
+      @movie1 = Tmdb.get_movie(params[:id1])
+      @movie2 = Tmdb.get_movie(params[:id2])
+    end
+
+    if @common_actors_id.count > 0 
+      @common_actors = @common_actors_id.map{|id| @actors1.find{|actor|actor['id'] == id}}
+    end
   end
 
 
@@ -33,6 +45,10 @@ class SearchActorController < ApplicationController
   end
 
   private
+
+  def find_common_actors_id(actors1, actors2)
+    actors1.map{|actor|actor['id']} & actors2.map{|actor|actor['id']}
+  end
 
   def dispatch_params
     params.permit('first-movie-id', 'movie-id')

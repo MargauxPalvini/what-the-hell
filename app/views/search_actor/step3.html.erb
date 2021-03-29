@@ -2,12 +2,21 @@
   container-step-5
 <% end %>
 
-Your actor
+<%= @common_actors %>
 
-OR 
+<% if @common_actors_id.count == 0 %>
+  <%#= No actor in common %>
+  <%= render "shared/movie", movie: @movie1 %>
+  <%= render "shared/movie", movie: @movie2 %>
+  ERROR
 
-Your actorS 
+<% elsif @common_actors_id.count == 1 %>
+  <%#= Only one actor in common %>
+  <%= render "shared/unique_actor", actor: @common_actors[0] %>
 
-OR 
-
-Error message
+<% else %>
+  <%#= Multiple actor in common %>
+  <%= render "shared/movie", movie: @movie1 %>
+  <%= render "shared/movie", movie: @movie2 %>
+  Display common actors 
+<% end %>

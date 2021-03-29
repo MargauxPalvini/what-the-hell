@@ -1,0 +1,21 @@
+<div class="scroll-container" data-controller="results">
+    
+    <% image_url = "https://image.tmdb.org/t/p/w500#{actor["profile_path"]}" %>
+
+    <div class="final-result-card-container">
+      <div class="final-result-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url(<%= image_url %>);"></div>
+    </div>
+
+    <div class="actor-name" id="result-actor-name" >
+        <h1><%= actor["name"] %></h1>
+    </div>
+
+    <div class="result-wrapper">
+
+          <div class="actor-details" data-results-target="details">
+              <p id="biography"> <%= actor["biography"] %></p>
+              <div id="bio-gradient" class=""></div>
+          </div>
+    </div>
+    <%= render 'shared/navigation/footer' %>
+</div>
