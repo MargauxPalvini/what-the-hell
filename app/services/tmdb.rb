@@ -3,6 +3,43 @@ require "open-uri"
 class Tmdb
   @api_key = ENV['TMDB_KEY']
 
+
+  def self.search_cast(movie_id)
+    actors_url = "https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{@api_key}&language=en-US"
+
+    actors_response = URI.parse(actors_url).read
+    actors = JSON.parse(actors_response)["cast"]
+    actors.select do |actor|
+      actor["known_for_department"] == "Acting"
+    end
+  end
+
+  def self.get_movie(movie_id)
+    movie_url = "https://api.themoviedb.org/3/movie/#{movie_id.to_i}?api_key=#{@api_key}&language=en-US"
+    movie_response = URI.parse(movie_url).read
+    movie_details = JSON.parse(movie_response)
+
+    {
+      title: movie_details["title"],
+      img_path: movie_details["poster_path"],
+      year: movie_details["release_date"]
+    }
+  end
+
+
+  # OLD
+
+
+   def self.api_call_for_actors(movie_id)
+    actors_url = "https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{@api_key}&language=en-US"
+
+    actors_response = URI.parse(actors_url).read
+    actors = JSON.parse(actors_response)["cast"]
+    actors.select do |actor|
+      actor["known_for_department"] == "Acting"
+    end
+  end
+
   def self.get_actors(movie_id)
     filtered = api_call_for_actors(movie_id)
 
@@ -59,15 +96,6 @@ class Tmdb
     end
   end
 
-  def self.api_call_for_actors(movie_id)
-    actors_url = "https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{@api_key}&language=en-US"
-
-    actors_response = URI.parse(actors_url).read
-    actors = JSON.parse(actors_response)["cast"]
-    actors.select do |actor|
-      actor["known_for_department"] == "Acting"
-    end
-  end
 
   def self.actor_not_found
     "{\"adult\":\"\",\"also_known_as\":\"\",\"biography\":\"\",\"birthday\":\"\",\"deathday\":\"\",\"gender\":\"\",\"homepage\":\"\",\"id\":\"\",\"imdb_id\":\"\",\"known_for_department\":\"\",\"name\":\"NOT FOUND\",\"place_of_birth\":\"\",\"popularity\":\"\",\"profile_path\":\"\"}"

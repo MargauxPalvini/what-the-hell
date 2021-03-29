@@ -1,3 +1,5 @@
+#require_relative "../services/tmdb.rb"
+
 class SearchActorController < ApplicationController
 
 
@@ -6,7 +8,13 @@ class SearchActorController < ApplicationController
   end
 
   def step2
+    # make the first movie id available
     @first_id = params[:id1]
+
+    # look for the first movie actors
+    @movie = Tmdb.get_movie(@first_id)
+    @actors = Tmdb.search_cast(@first_id)
+    @display_actors = @actors.sort{|b, a| a["popularity"] - b["popularity"]}.first(4)
   end
 
   def step3

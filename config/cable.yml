@@ -1,10 +1,10 @@
-development:
-  adapter: redis
+# development:
+#   adapter: redis
 
-test:
-  adapter: test
+# test:
+#   adapter: test
 
-production:
-  adapter: redis
-  url: <%= ENV.fetch("REDISCLOUD_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: what_the_hell_production
+# production:
+#   adapter: redis
+#   url: <%= ENV.fetch("REDISCLOUD_URL") { "redis://localhost:6379/1" } %>
+#   channel_prefix: what_the_hell_production
