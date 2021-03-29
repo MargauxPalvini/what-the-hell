@@ -1,9 +1,6 @@
-<% placeholder = @query.any? ? "Type another movie..." : 'Type a movie...' %>
-<%= text_field_tag 'movie-input', nil, placeholder: placeholder, autocomplete: 'off' %>
+<% placeholder = "Type another movie..." %>
 
-<%= simple_form_for @search, url: searches_path(queries: @query.join('&')) do |f| %>
-    <%= f.hidden_field :query, label: false %>
-<% end %>
+<%= text_field_tag 'movie-input', nil, placeholder: placeholder, autocomplete: 'off' %>
 
 <div id="movie-suggestions"
      data-tmdb-api-key="<%= ENV['TMDB_KEY'] %>">

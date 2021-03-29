@@ -1,0 +1,49 @@
+// Specific CSS for your home-page
+.background-gradient {
+  background: linear-gradient($purple 32.01%, $yellow 65.72%);
+  height: 100vh;
+  position: relative;
+}
+
+.cover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+    url(image_path("cover-big.jpg"));
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 153vw;
+  position: absolute;
+  top: 0;
+}
+
+.container-step-1 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.explanation-sub {
+  font-size: 16px;
+  color: white;
+  margin: 10px;
+}
+
+.tag-line {
+  font-family: "Montserrat";
+  color: #fff;
+  letter-spacing: 1px;
+  background-image: url(https://media.giphy.com/media/kaCZPvyS4LyOZ3Ywu9/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin: -15px 0;
+  font-size: 20px;
+  padding-bottom: 10%;
+}

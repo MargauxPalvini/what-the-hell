@@ -1,1 +1,13 @@
-Enter movie 1
+<% content_for :class do %>
+  container-step-1
+<% end %>
+
+<%= render "shared/global/header" %>
+
+<div> 
+    <%= render "shared/forms/movie_input" %>
+</div>
+
+<p class="tag-line">
+    Write down a movie name or upload an actor's picture and we'll find their name for you !
+</p>

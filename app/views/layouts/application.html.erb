@@ -36,8 +36,11 @@
   </head>
 
   <body>
-    <%= render "shared/navigation/flashes" %>
-
-    <%= yield %>
+    <div class="background-gradient">
+      <div class="container <%= yield :class %>">
+        <%= render "shared/navigation/flashes" %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
