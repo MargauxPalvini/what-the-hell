@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   root to: "search_actor#step1"
+  
+  get '/', to: 'search_actor#step1', as: :step1
+  get ':id1', to: 'search_actor#step2', as: :step2 
+  get ':id1/:id2', to: 'search_actor#step3', as: :step3
 
-  get '/step1', to: 'search_actor#step1'
-  get '/step2', to: 'search_actor#step2'
-  get '/step3', to: 'search_actor#step3'
-  get '/step4', to: 'search_actor#step4'
-  get '/step5', to: 'search_actor#step5'
-
+  post '/dispatch', to: 'search_actor#dispatch_post', as: "dispatch"
 end

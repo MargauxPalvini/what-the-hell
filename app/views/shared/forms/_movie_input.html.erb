@@ -1,8 +1,11 @@
 <% placeholder = "Type another movie..." %>
 
-<%= form_with url: @form_action, method: :post, class: "movie-search" do |form| %>
-     <%= form.text_field 'movie-name', placeholder: placeholder, autocomplete: 'off' %>
+<%= form_with url: dispatch_path, method: :post, class: "movie-search" do |form| %>
+     <%= form.text_field 'movie-name', placeholder: placeholder, autocomplete: 'off', name: "" %>
      <input type="hidden" name="movie-id" id="movie-id">
+     <% if @first_id %>
+          <input type="hidden" value="<%= @first_id %>" name="first-movie-id" id="first-movie-id">
+     <% end %>
 <% end %>
 
 <div id="movie-suggestions"

@@ -9,7 +9,7 @@ const submitMovie = (event) => {
   movieName.value = event.currentTarget.attributes["movie-title"].value;
   // set the value of the form field to the movie id
   movieId.value = event.currentTarget.attributes["movie-id"].value;
-  // form.submit();
+  form.submit();
 };
 
 const fetchMovies = (query) => {
