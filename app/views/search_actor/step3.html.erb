@@ -2,13 +2,17 @@
   container-step-5
 <% end %>
 
-<%= @common_actors %>
-
 <% if @common_actors_id.count == 0 %>
   <%#= No actor in common %>
   <%= render "shared/movie", movie: @movie1 %>
   <%= render "shared/movie", movie: @movie2 %>
-  ERROR
+  <h2>No actor in common</h2>
+  <p>There is no actor in common between <em><%= @movie1[:title] %></em> and <em><%= @movie2[:title] %></em>, but have a 
+  look at the most popular actors from <strong><%= @movie2[:title] %></strong>:</p>
+  
+  <% @display_actors.each do |actor| %>
+    <%= render "shared/actor", actor: actor %>
+  <% end %>
 
 <% elsif @common_actors_id.count == 1 %>
   <%#= Only one actor in common %>
@@ -18,5 +22,10 @@
   <%#= Multiple actor in common %>
   <%= render "shared/movie", movie: @movie1 %>
   <%= render "shared/movie", movie: @movie2 %>
-  Display common actors 
+  <h2>There is multiple actors in common</h2>
+  <p>More than one actor plays in <em><%= @movie1[:title] %></em> and <em><%= @movie2[:title] %></em>.<br>
+  Let's see:</p>
+    <% @common_actors.each do |actor| %>
+    <%= render "shared/actor", actor: actor %>
+  <% end %>
 <% end %>

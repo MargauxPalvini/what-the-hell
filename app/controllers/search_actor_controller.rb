@@ -31,6 +31,10 @@ class SearchActorController < ApplicationController
     if @common_actors_id.count > 0 
       @common_actors = @common_actors_id.map{|id| @actors1.find{|actor|actor['id'] == id}}
     end
+
+    if @common_actors_id.count == 0 
+          @display_actors = @actors2.sort{|b, a| a["popularity"] - b["popularity"]}.first(4)
+    end
   end
 
 

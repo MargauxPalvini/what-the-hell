@@ -19,3 +19,35 @@
     transform: rotate(-12deg);
   }
 }
+
+.collapse {
+  background-color: #a2de96;
+  border: none;
+  outline: none;
+  font-size: 25px;
+}
+
+.active,
+.collapse:hover {
+  background-color: #438a5e;
+}
+
+.collapsible-text {
+  background-color: #e1ffc2;
+  display: none;
+  font-size: 20px;
+}
+
+.container {
+  padding: 32px;
+}
+
+.scroll-container {
+  // overflow-y: scroll; /* can be auto or scroll */
+  // -webkit-overflow-scrolling: touch; /* adds momentum scrolling for iOS*/
+  height: 200vh;
+}
+
+.hidden {
+  display: none;
+}
