@@ -1,15 +1,12 @@
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
-// Graphical variables
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap");
 
-// External libraries
-@import "bootstrap/scss/bootstrap";
+@import "config/colors";
+
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import "pages/global";
-@import "pages/step1";
-@import "pages/step3";
+@import "partials/global";
 @import "partials/search";
 @import "partials/actor";
+@import "pages/step1";
+@import "pages/step3";

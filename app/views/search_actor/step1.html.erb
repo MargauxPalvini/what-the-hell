@@ -2,12 +2,19 @@
   container-step-1
 <% end %>
 
+<div class="illustration"></div>
+
 <%= render "shared/global/header" %>
 
-<div>  
-    <%= render "shared/forms/movie_input" %>
+<div class="inner">  
+    <%= render "shared/forms/movie_input", placeholder: "Type a movie name" %>
 </div>
 
-<p class="tag-line">
-    Write down a movie name or upload an actor's picture and we'll find their name for you !
-</p>
+<div class="block--explanation">
+  <div class="inner">
+    <p class="tag-line">
+        Write down a movie name or upload an actor's picture and we'll find their name for you !
+    </p>
+  </div>
+</div>
+

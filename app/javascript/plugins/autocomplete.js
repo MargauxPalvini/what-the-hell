@@ -38,7 +38,7 @@ const insertMovies = (data) => {
   firstFour.forEach((movie) => {
     const img_url = movieImage(movie);
 
-    const movieCard = `<div class="film-option" movie-id="${
+    const movieCard = `<div class="film-option h4-like" movie-id="${
       movie.id
     }" movie-title="${movie.original_title}">
                           <img src="${img_url}" alt="">
