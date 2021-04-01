@@ -6,16 +6,17 @@
         <h1 class="final-actor__name"><%= actor["name"] %></h1>
     </div>
 
-
-    <div class="final-actor__details inner closed">
-        <div class="final-actor__details__biography">
-            <p><%= actor["biography"] %></p>
-            <div class="final-actor__details__gradient"></div>
-        </div>
-        
-        <button class="btn btn--show-more">See more</button>
-        <button class="btn btn--show-less">See less</button>
-    </div>
+    <% if !actor["biography"].empty? %>
+      <div class="final-actor__details inner closed">
+          <div class="final-actor__details__biography">
+              <p><%= actor["biography"] %></p>
+              <div class="final-actor__details__gradient"></div>
+          </div>
+          
+          <button class="btn btn--show-more">See more</button>
+          <button class="btn btn--show-less">See less</button>
+      </div>
+    <% end %>
 </div>
 <script>
 document.addEventListener("turbolinks:load", () => {

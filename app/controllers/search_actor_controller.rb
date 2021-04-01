@@ -42,6 +42,12 @@ class SearchActorController < ApplicationController
 
   end
 
+  def show_actor
+    @common_actors_id = [0]
+    @unique_actor = Tmdb.get_actor(params[:id])
+    render "step3"
+  end
+
 
   def dispatch_post
     if (dispatch_params['movie-id'] && dispatch_params['first-movie-id'])
