@@ -33,6 +33,25 @@ class Tmdb
     JSON.parse(actor_response)
   end
 
+  def self.movie_from_title(movie_title)
+      url = "https://api.themoviedb.org/3/search/movie?api_key=#{@api_key}&query=#{URI.encode(movie_title)}"
+      puts url
+      response = URI.parse(url).read
+      results = JSON.parse(response)['results']
+      puts results
+      if results.count>0
+      movie_details = results.first
+      {
+        title: movie_details["title"],
+        img_path: movie_details["poster_path"],
+        description: movie_details["overview"],
+        year: movie_details["release_date"]
+      }
+    else 
+      nil 
+    end
+  end
+
 
   # OLD
 

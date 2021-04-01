@@ -4,7 +4,6 @@ class SearchActorController < ApplicationController
 
 
   def step1
-    "hi"
   end
 
   def step2
