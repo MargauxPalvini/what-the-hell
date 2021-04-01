@@ -9,7 +9,6 @@ const switchBiographyClass = () => {
 
 const initBiographyExpand = () => {
   biographyButtons.forEach((button) => {
-    console.log(button);
     button.addEventListener("click", switchBiographyClass);
   });
 };
