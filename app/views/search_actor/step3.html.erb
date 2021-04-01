@@ -17,6 +17,9 @@
   </div>
 
 <% elsif @common_actors_id.count == 1 %>
+  <% content_for :class do %>
+    container-step-3 container-unique-actor
+  <% end %>
   <%#= Only one actor in common %>
   <%= render "shared/unique_actor", actor: @unique_actor %>
 
@@ -37,3 +40,5 @@
     <% end %>
   </div>
 <% end %>
+
+<%= render "shared/footer" %>

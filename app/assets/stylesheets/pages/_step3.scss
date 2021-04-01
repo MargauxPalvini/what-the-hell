@@ -1,9 +1,14 @@
 .container-step-3 {
   color: #fff;
   padding-bottom: 1.6rem;
-  background: $yellow;
+  &:not(.container-unique-actor) {
+    padding-top: 1.6rem;
+  }
 }
 
+.container-unique-actor {
+  background: $yellow;
+}
 .final-actor__picture {
   --borderWidth: 20px;
   padding: var(--borderWidth);
