@@ -1,16 +1,16 @@
-<div class="recommendations">
-  <div class="recommendations__pictures">
-    <% @complete_recommendations.each_with_index do |reco, index| %>
-      <div class="recommendation__picture" data-movie-id="<%= index %>">
-        <img src="https://image.tmdb.org/t/p/w200/<%= reco[:img_path] %>" alt="<%= reco[:title] %> poster">
-      </div>
-    <% end %>
-  </div>
-
-    <% @complete_recommendations.each_with_index do |reco,index| %>
-      <div class="recommendation" data-movie-id="<%= index %>">
-        <h2 class="recommendation__title"><%= reco[:title] %></h2>
-        <p class="recommendation__description"><%= reco[:description] %></p>
-      </div>
-    <% end %>
+<h2>Have you watched these yet?</h2>
+<p>If you liked <%= @movie_title %>, you might also love these movies we hand-picked for you:</p>
+<div class="recommendations__pictures">
+  <% @complete_recommendations.each_with_index do |reco, index| %>
+    <div class="recommendation__picture <%= index == 0 ? 'active' : nil %>" data-movie-id="<%= index %>" onclick="showRecommendation(<%= index %>)">
+      <img src="https://image.tmdb.org/t/p/w200/<%= reco[:img_path] %>" alt="<%= reco[:title] %> poster">
+    </div>
+  <% end %>
 </div>
+
+  <% @complete_recommendations.each_with_index do |reco,index| %>
+    <div class="recommendation stack <%= index == 0 ? 'active' : nil %>" data-movie-id="<%= index %>">
+      <h3 class="recommendation__title"><%= reco[:title] %></h3>
+      <p class="recommendation__description"><%= reco[:description] %></p>
+    </div>
+  <% end %>

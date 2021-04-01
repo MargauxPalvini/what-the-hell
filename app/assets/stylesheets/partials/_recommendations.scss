@@ -1,0 +1,51 @@
+.recommendations {
+  background-color: rgba(52, 27, 59, 0.9);
+  border-radius: 4px;
+  color: #fff;
+  padding: 1.2rem;
+  border: 2px solid #fff;
+
+  h2 {
+    text-transform: uppercase;
+    color: $yellow;
+    text-align: center;
+  }
+}
+
+.recommendations__pictures {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.recommendation__picture {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 120ms ease-in-out;
+  bottom: 0px;
+
+  img {
+    display: block;
+  }
+
+  &:hover,
+  &.active {
+    box-shadow: var(--box-shadow-large);
+    bottom: 4px;
+  }
+
+  &.active {
+    border-color: $yellow;
+    bottom: 8px;
+  }
+}
+
+.recommendation {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

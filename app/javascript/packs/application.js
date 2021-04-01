@@ -11,9 +11,11 @@ Rails.start();
 Turbolinks.start();
 
 import { initAutocomplete } from "../plugins/autocomplete";
+import { showRecommendation } from "../plugins/recommendations_switcher";
 import { initConfetti } from "../plugins/confetti";
 import { initBiographyExpand } from "../plugins/biography_expand";
 
+window.showRecommendation = showRecommendation;
 window.initConfetti = initConfetti;
 
 document.addEventListener("turbolinks:load", () => {
