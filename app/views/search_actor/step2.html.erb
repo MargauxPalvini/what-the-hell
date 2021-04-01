@@ -18,4 +18,21 @@
   </div>
 </div>
 
+<div class="inner recommendations">
+
+</div>
+
 <%= render "shared/footer" %>
+
+<script>
+document.addEventListener("turbolinks:load", () => {
+
+  fetch( "/recommendations/<%= @movie[:title] %>")
+    .then(response=>response.json())
+    .then(data=>{ 
+      if(data.html){
+        document.querySelector('.recommendations').innerHTML = data.html;
+      }
+     })
+})
+</script>
