@@ -1,11 +1,10 @@
-  <div class="actor-card-category">
-
+  <div class="actor">
     <% if actor['profile_path'] %>
       <% img_url = "https://image.tmdb.org/t/p/w200/#{actor['profile_path']}" %>
-      <img class="actor-card-img" src=<%= img_url %> >
+      <img class="actor__img" src=<%= img_url %> >
     <% else %>
-      <%= image_tag "placeholder.jpg", alt: "", class: 'actor-card-img' %>
+      <%= image_tag("placeholder.jpg", alt: "", class: 'actor__img') %>
     <% end %>
 
-    <div class="actor-card-title"><%= actor["name"]%></div>
+    <h3 class="actor__title"><%= actor["name"]%></h3>
   </div>

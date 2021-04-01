@@ -41,5 +41,5 @@ document.addEventListener("turbolinks:load", () => {
   // initMovieRecommendationCable();
   // initSlider();
   initBiographyExpand();
-  initScrollFast();
+  // initScrollFast();
 });

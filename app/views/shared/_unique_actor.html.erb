@@ -1,21 +1,19 @@
-<div class="scroll-container" data-controller="results">
-    
+<div class="final-actor">
     <% image_url = "https://image.tmdb.org/t/p/w500#{actor["profile_path"]}" %>
 
-    <div class="final-result-card-container">
-      <div class="final-result-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url(<%= image_url %>);"></div>
+    <div class="final-actor__picture">
+      <div class="final-actor__picture__img" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url(<%= image_url %>);"></div>
+        <h1 class="final-actor__name"><%= actor["name"] %></h1>
     </div>
 
-    <div class="actor-name" id="result-actor-name" >
-        <h1><%= actor["name"] %></h1>
-    </div>
 
-    <div class="result-wrapper">
-
-          <div class="actor-details" data-results-target="details">
-              <p id="biography"> <%= actor["biography"] %></p>
-              <div id="bio-gradient" class=""></div>
-          </div>
+    <div class="final-actor__details inner closed">
+        <div class="final-actor__details__biography">
+            <p><%= actor["biography"] %></p>
+            <div class="final-actor__details__gradient"></div>
+        </div>
+        
+        <button class="btn btn--show-more">See more</button>
+        <button class="btn btn--show-less">See less</button>
     </div>
-    <%= render 'shared/navigation/footer' %>
 </div>

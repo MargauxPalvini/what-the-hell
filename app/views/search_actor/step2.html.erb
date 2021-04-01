@@ -2,15 +2,19 @@
   container-step-2
 <% end %>
 
-<%= render "shared/movie", movie: @movie %>
+<div class="inner">
+  <%= render "shared/movie", movie: @movie %>
+</div>
 
 <div class="inner">  
     <%= render "shared/forms/movie_input", placeholder: "Type another movie" %>
 </div>
 
-  <div id="cast-section">
+<div class="inner">
+  <div class="grid actors">
     <% @display_actors.each do |actor| %>
       <%= render "shared/actor", actor: actor %>
     <% end %>
   </div>
+</div>
 

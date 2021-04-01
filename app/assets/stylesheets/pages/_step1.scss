@@ -1,18 +1,6 @@
-// .illustration {
-//   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
-//     url(image_path("cover-big.jpg"));
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-// }
-
 .container-step-1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-    url(image_path("cover-big.jpg"));
+    url(image_path("cover-square.jpg"));
   background-size: contain;
   background-repeat: repeat-y;
   position: relative;

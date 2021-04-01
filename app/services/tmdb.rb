@@ -26,6 +26,13 @@ class Tmdb
     }
   end
 
+  def self.get_actor(actor_id)
+    url = "https://api.themoviedb.org/3/person/#{actor_id}?api_key=#{@api_key}&language=en-US&include_adult=false"
+
+    actor_response = URI.parse(url).read
+    JSON.parse(actor_response)
+  end
+
 
   # OLD
 

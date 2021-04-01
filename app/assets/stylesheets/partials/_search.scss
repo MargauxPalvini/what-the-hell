@@ -7,15 +7,14 @@
   border: none;
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  margin: 16px 0;
 }
 
 .movie-card,
 .film-option {
+  color: #000;
   display: flex;
   align-items: center;
   padding: 4px;
-  margin-bottom: 4px;
   border-radius: 4px;
   img {
     width: 40px;
@@ -28,11 +27,15 @@
   }
 }
 
+.film-option {
+  margin-bottom: 4px;
+}
+
 .movie-card {
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
   .movie-card__title {
-    font-size: 20px;
+    font-size: var(--size-600);
   }
 }
 

@@ -7,7 +7,7 @@
 
   --box-shadow-large: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 p,
@@ -27,7 +27,21 @@ h3,
 .h3-like,
 h4,
 .h4-like {
-  font-weight: 500;
+  font-weight: 400;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: var(--size-400);
+  line-height: inherit;
+  height: var(--form-field-height);
+  box-sizing: border-box;
 }
 
 body {
@@ -61,46 +75,37 @@ body {
 }
 
 .main-title {
-  font-weight: 500;
-  font-size: var(--size-900);
   line-height: 1.3;
   color: $light-yellow;
   text-shadow: 4px 5px 4px rgba(245, 103, 42, 0.6);
   padding: 40px 0 25px 0;
   align-self: center;
-  // position: relative;
-  // top: 50px;
   display: inline-block;
   h1 {
+    font-size: var(--size-900);
+    font-weight: 500;
     transform: rotate(-12deg);
-    font-size: inherit;
+    text-align: left;
+    display: inline-block;
   }
-}
-
-.collapse {
-  background-color: #a2de96;
-  border: none;
-  outline: none;
-  font-size: 25px;
-}
-
-.active,
-.collapse:hover {
-  background-color: #438a5e;
-}
-
-.collapsible-text {
-  background-color: #e1ffc2;
-  display: none;
-  font-size: 20px;
-}
-
-.scroll-container {
-  // overflow-y: scroll; /* can be auto or scroll */
-  // -webkit-overflow-scrolling: touch; /* adds momentum scrolling for iOS*/
-  height: 200vh;
 }
 
 .hidden {
   display: none;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 16px;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgba(52, 27, 69, 0.8);
+  color: $light-gray;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border: none;
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+  }
 }
