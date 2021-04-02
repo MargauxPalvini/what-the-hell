@@ -1,0 +1,9 @@
+<% # change button icon here %>
+<% btn_img_upload = icon("fas", "camera", class: "icon-img-upload") %>
+
+<div id="photo-upload" data-controller="img-upload">
+    <%= form_with url: recognition_url, method: :post do |form| %>
+        <%= form.file_field :picture %>
+        <%= form.submit "Search" %>
+    <% end %>
+</div>

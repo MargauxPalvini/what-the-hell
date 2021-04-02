@@ -1,6 +1,5 @@
+// WIll hide all other recommendation and show the current one, based on index
 export const showRecommendation = (movieIndex) => {
-  console.log(movieIndex);
-
   // Remove active class to all posters and recommendation block
   const pictures = document.querySelectorAll(".recommendation__picture");
   const recommendations = document.querySelectorAll(".recommendation");

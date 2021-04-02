@@ -52,6 +52,12 @@ class Tmdb
     end
   end
 
+    def self.actor_from_name(query)
+    query = URI.encode(query)
+    url = "https://api.themoviedb.org/3/search/person?api_key=#{@api_key}&language=en-US&query=#{query}&page=1&include_adult=false"
+    JSON.parse(URI.parse(url).read)['results'][0]
+  end
+
 
   # OLD
 
