@@ -18,7 +18,6 @@ Ensure you have the following gems in your Rails `Gemfile`
 ```ruby
 # Gemfile
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 ```
 
@@ -94,8 +93,6 @@ Look at your main `application.scss` file to see how SCSS files are imported. Th
 
 // External libraries
 @import "bootstrap/scss/bootstrap"; // from the node_modules
-@import "font-awesome-sprockets";
-@import "font-awesome";
 
 // Your CSS partials
 @import "components/index";

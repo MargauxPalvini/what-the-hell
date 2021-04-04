@@ -1,5 +1,7 @@
 <% # change button icon here %>
 <%= form_with url: recognition_url, method: :post, class: "form-face-recognition" do |form| %>
-    <label for="picture"><%= icon("fas", "camera", class: "icon-img-upload") %></label>
+    <label for="picture">
+        <%= image_tag("camera.svg") %>
+    </label>
     <%= form.file_field :picture, class: "file-input" %>
 <% end %>
