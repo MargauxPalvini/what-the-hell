@@ -29,3 +29,21 @@
   margin: 0;
   text-shadow: var(--box-shadow-small);
 }
+
+.form-face-recognition{
+  margin: 4rem 0;
+  text-align: center;
+
+  label{
+    cursor: pointer;
+  }
+
+  .file-input{
+    display: none;
+  }
+
+  .fas{
+    font-size: 4em;
+    color: $yellow;
+  }
+}
