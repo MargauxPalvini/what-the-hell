@@ -14,6 +14,7 @@ import { initAutocomplete } from "../plugins/autocomplete";
 import { showRecommendation } from "../plugins/recommendations_switcher";
 import { initConfetti } from "../plugins/confetti";
 import { initBiographyExpand } from "../plugins/biography_expand";
+import { initFaceRecognitionForm } from "../plugins/face_recognition";
 
 window.showRecommendation = showRecommendation;
 window.initConfetti = initConfetti;
@@ -21,4 +22,5 @@ window.initConfetti = initConfetti;
 document.addEventListener("turbolinks:load", () => {
   initAutocomplete();
   initBiographyExpand();
+  initFaceRecognitionForm();
 });
