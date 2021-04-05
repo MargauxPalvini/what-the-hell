@@ -20,7 +20,9 @@ window.showRecommendation = showRecommendation;
 window.initConfetti = initConfetti;
 
 document.addEventListener("turbolinks:load", () => {
+  console.log("LOAD");
   initAutocomplete();
   initBiographyExpand();
   initFaceRecognitionForm();
 });
+
