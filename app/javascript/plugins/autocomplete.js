@@ -1,10 +1,8 @@
-const movieName = document.getElementById("movie-name");
-const movieId = document.getElementById("movie-id");
-
-const form = document.querySelector(".movie-search");
-const movieSuggestions = document.getElementById("movie-suggestions");
-
 const submitMovie = (event) => {
+  const form = document.querySelector(".movie-search");
+  const movieId = document.getElementById("movie-id");
+  const movieName = document.getElementById("movie-name");
+
   // enter chosen movie in the search field
   movieName.value = event.currentTarget.attributes["movie-title"].value;
   // set the value of the form field to the movie id
@@ -33,6 +31,8 @@ const movieImage = (movie) => {
 };
 
 const insertMovies = (data) => {
+  const movieSuggestions = document.querySelector("#movie-suggestions");
+
   movieSuggestions.innerHTML = "";
   const firstFour = data.results.slice(0, 4);
   firstFour.forEach((movie) => {
@@ -67,9 +67,11 @@ const toggleElements = (input, suggestions, element) => {
 };
 
 const initAutocomplete = () => {
-  let movieSuggestions = document.querySelector("#movie-suggestions");
-  let mainTitle = document.querySelector(".main-title");
-  let movieCards = document.querySelector("#movie-card-section");
+  const movieSuggestions = document.querySelector("#movie-suggestions");
+  const mainTitle = document.querySelector(".main-title");
+  const movieCards = document.querySelector("#movie-card-section");
+  const movieName = document.getElementById("movie-name");
+
   console.log("INIT AUTO", {movieName, movieCards, movieSuggestions})
 
   // added check for the presence of the element to suppress errors on views without the movie input
