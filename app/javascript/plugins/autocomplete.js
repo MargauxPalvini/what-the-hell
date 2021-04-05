@@ -56,12 +56,12 @@ const insertMovies = (data) => {
 
 const toggleElements = (input, suggestions, element) => {
   input.addEventListener("focus", (event) => {
-    element.style.display = "none";
+    element.classList.add("folded")
   });
   // if the input field loses focus and there are no movie suggestions on screen, restore the title
   input.addEventListener("blur", (event) => {
     if (suggestions.innerText == "") {
-      element.style.display = "block";
+      element.classList.remove("folded")
     }
   });
 };

@@ -81,12 +81,17 @@ body {
   padding: 40px 0 25px 0;
   align-self: center;
   display: inline-block;
-  h1 {
-    font-size: var(--size-900);
-    font-weight: 500;
-    transform: rotate(-12deg);
-    text-align: left;
-    display: inline-block;
+  user-select: none;
+
+  img{
+    transition: all 180ms ease-in-out;
+    width: 100%;
+  }
+
+  &.folded{
+    img{
+      width: 50%;
+    }
   }
 }
 
