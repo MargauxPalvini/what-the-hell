@@ -67,9 +67,11 @@ const toggleElements = (input, suggestions, element) => {
 };
 
 const initAutocomplete = () => {
-  const movieSuggestions = document.getElementById("movie-suggestions");
-  const mainTitle = document.getElementsByClassName("main-title")[0];
-  const movieCards = document.getElementById("movie-card-section");
+  let movieSuggestions = document.querySelector("#movie-suggestions");
+  let mainTitle = document.querySelector(".main-title");
+  let movieCards = document.querySelector("#movie-card-section");
+  console.log("INIT AUTO", {movieName, movieCards, movieSuggestions})
+
   // added check for the presence of the element to suppress errors on views without the movie input
   if (movieName) {
     if (mainTitle) {

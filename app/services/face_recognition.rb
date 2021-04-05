@@ -9,6 +9,8 @@ class FaceRecognition
       JSON.parse(response)
     rescue Net::ReadTimeout
       {"ERROR": "Time out"}
+    rescue 
+      {"ERROR": "Other"}
     end
   end
 

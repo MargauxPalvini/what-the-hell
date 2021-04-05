@@ -10,8 +10,12 @@ class FacialRecognitionController < ApplicationController
 
     if actor 
       actor = actor["actor"]
-      tmdb_actor = Tmdb.actor_from_name actor
-      redirect_to show_actor_path(id: tmdb_actor["id"])
+      begin
+        tmdb_actor = Tmdb.actor_from_name actor
+        redirect_to show_actor_path(id: tmdb_actor["id"])
+      rescue
+        redirect_to root_path
+      end
     else
       nil
     end
